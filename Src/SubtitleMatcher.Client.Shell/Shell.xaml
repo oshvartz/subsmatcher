@@ -1,0 +1,30 @@
+﻿<Window x:Class="SubtitleMatcher.Client.Shell.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cal="http://www.codeplex.com/CompositeWPF"
+        Height="500" Width="683" Icon="multimedia2.ico">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.4*" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Just Choose your media file(s) and subtitle search provider - we'll do the rest" Background="LightBlue"  FontSize="13"/>
+        <Border Grid.Row="1" BorderBrush="Black" BorderThickness="2" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.40*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+                <ItemsControl Grid.Column="0" Name="SubMatchProvidersRegion" cal:RegionManager.RegionName="SubMatchProvidersRegion" MinWidth="100" />
+                <GridSplitter Grid.Column ="1"  Width="1" Background="Black"
+                HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+                <ItemsControl Grid.Column="1" Name="FileSelectionRegion" cal:RegionManager.RegionName="FileSelectionRegion" />
+            </Grid>
+    </Border>
+    <Border Grid.Row="2" BorderBrush="Black" BorderThickness="2" >
+            <ItemsControl Name="ActionsRegion" cal:RegionManager.RegionName="ActionsRegion"  />
+        </Border>
+    </Grid>
+</Window>

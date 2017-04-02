@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{504024A0-FB57-4E09-BDDB-E1690DA2AB01}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenSubtitlesOrgMatcher</RootNamespace>
+    <AssemblyName>OpenSubtitlesOrgMatcher</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CookComputing.XmlRpcV2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\RPC\CookComputing.XmlRpcV2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OpenSubtitlesOrg\LoginTokenHolder.cs" />
+    <Compile Include="OpenSubtitlesOrgProvider.cs" />
+    <Compile Include="OpenSubtitlesOrg\API\CheckHashInfo.cs" />
+    <Compile Include="OpenSubtitlesOrg\API\DownloadSubtitlesResult.cs" />
+    <Compile Include="OpenSubtitlesOrg\API\IOpenSubtitlesDb.cs" />
+    <Compile Include="OpenSubtitlesOrg\API\LoginInfo.cs" />
+    <Compile Include="OpenSubtitlesOrg\API\SearchInfo.cs" />
+    <Compile Include="OpenSubtitlesOrg\API\SubCheckHashResult.cs" />
+    <Compile Include="OpenSubtitlesOrg\API\SubtitleDataInfo.cs" />
+    <Compile Include="OpenSubtitlesOrg\API\SubtitleInfo.cs" />
+    <Compile Include="OpenSubtitlesOrg\API\SubtitlesData.cs" />
+    <Compile Include="OpenSubtitlesOrg\API\TryUploadInfo.cs" />
+    <Compile Include="OpenSubtitlesOrg\API\TryUploadResult.cs" />
+    <Compile Include="OpenSubtitlesOrg\API\UA.cs" />
+    <Compile Include="OpenSubtitlesOrg\API\UploadBaseinfo.cs" />
+    <Compile Include="OpenSubtitlesOrg\API\UploadCDsInfo.cs" />
+    <Compile Include="OpenSubtitlesOrg\API\UploadResult.cs" />
+    <Compile Include="OpenSubtitlesOrg\Helper\MovieFileInfo.cs" />
+    <Compile Include="OpenSubtitlesOrg\Helper\UploadData.cs" />
+    <Compile Include="OpenSubtitlesOrg\MovieHashCache.cs" />
+    <Compile Include="OpenSubtitlesOrg\OpenSubtitlesXmlRpc.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SubtitlesMatcher.Common\SubtitlesMatcher.Common.csproj">
+      <Project>{A24DCE9A-36AF-4BA5-969C-C3DBEEB2BD6F}</Project>
+      <Name>SubtitlesMatcher.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SubtitlesMatcher.Infrastructure\SubtitlesMatcher.Infrastructure.csproj">
+      <Project>{3CA15F83-AD12-47CF-86E2-BBE0C04A3783}</Project>
+      <Name>SubtitlesMatcher.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

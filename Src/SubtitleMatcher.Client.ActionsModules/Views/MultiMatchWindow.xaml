@@ -1,0 +1,26 @@
+﻿<Window x:Class="SubtitleMatcher.Client.ActionsModules.Views.MultiMatchWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" ShowInTaskbar="False" ResizeMode="NoResize"
+             mc:Ignorable="d" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight">
+    
+
+        <StackPanel>
+        <TextBlock Text="Select subtitle version:" />
+        <ListBox ItemsSource="{Binding SubtitleMatchs}" SelectedIndex="{Binding SelectedMatchIndex}" >
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                    <EventSetter Event="MouseDoubleClick" Handler="Button_Click"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding SubFileName}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button  Click="Button_Click">Select</Button>
+    </StackPanel>
+    
+</Window>
